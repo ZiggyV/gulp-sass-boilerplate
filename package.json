@@ -15,6 +15,7 @@
     "browser-sync": "^2.13.0",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.5",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-htmlmin": "^2.0.0",
@@ -33,8 +34,5 @@
     "jshint": "^2.9.2",
     "main-bower-files": "^2.13.1",
     "wiredep": "^4.0.0"
-  },
-  "dependencies": {
-    "gulp-cache": "^0.4.5"
   }
 }

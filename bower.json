@@ -21,6 +21,11 @@
         "scss/font-awesome.scss",
         "fonts/*"
       ]
+    },
+    "reset-css": {
+      "main": [
+        "_reset.scss"
+      ]
     }
   }
 }

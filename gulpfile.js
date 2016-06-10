@@ -11,6 +11,7 @@ var autoprefixer = require('autoprefixer'),
     htmlmin = require('gulp-htmlmin'),
     imagemin = require('gulp-imagemin'),
     jshint = require('gulp-jshint'),
+    mainBowerFiles = require('main-bower-files'),
     mergequeries = require('gulp-merge-media-queries'),
     plumber = require('gulp-plumber'),
     postcss = require('gulp-postcss'),
@@ -67,7 +68,7 @@ var config = {
         all: 'src/scss/**/*.{scss,sass}',
         input: 'src/scss/main.{scss,sass}',
         output: 'dist/css',
-        bower: 'src/css',
+        bower: 'src/scss',
         tmp: '.tmp/css'
     }
 }
@@ -129,10 +130,17 @@ gulp.task('scripts', function() {
 //move fonts to dist and tmp
 //also moves used fonts from bower_components (like fontawesome) --> override main option in bower.json
 gulp.task('fonts', function() {
-    return gulp.src(require('main-bower-files')(config.fonts.bower, function(err){})
-        .concat(config.fonts.input))
+    return gulp.src(mainBowerFiles(config.fonts.bower, function(err){}) // get the main bower files, filter by ext: eot,svg,ttf,woff or woff2 
+        .concat(config.fonts.input)) //concatenate our own fonts to the array
         .pipe(gulp.dest(config.fonts.tmp))
-        .pipe(gulp.dest(config.fonts.output))
+        .pipe(gulp.dest(config.fonts.output));
+});
+
+//show the used fonts in your console; this is only a small helper function
+gulp.task('fonts:show', function() {
+    var fonts = (mainBowerFiles(config.fonts.bower, function(err){})
+        .concat(config.fonts.input));
+    console.log(fonts);
 });
 
 //compress images - PNG, JPG, GIF, SVG
@@ -148,7 +156,7 @@ gulp.task('images', function() {
         .pipe(gulp.dest(config.images.output));
 });
 
-//make our files ready for deployment: 
+//make js, css and html files ready for deployment: 
 //js files between <--build:js --> will be concatenated and uglified
 //css files between <--build:css --> will be concatenated and minified (no autoprefixer because our styles task took care of that)
 //html files will be minified
@@ -168,21 +176,21 @@ gulp.task('build', ['styles'], function() {
         .pipe(gulp.dest(config.global.output))
 });
 
-//inject bower components
+//inject bower components in SCSS and HTML files
 gulp.task('wiredep', function() {
-    gulp.src(config.styles.all)
+    gulp.src(config.styles.input) //inject between 'bower' blocks in main.scss file
         .pipe(plumber())
         .pipe(wiredep({
             ignorePath: /^(\.\.\/)+/
         }))
-        .pipe(gulp.dest(config.styles.bower));
+        .pipe(gulp.dest(config.styles.bower)); //injects them in src/scss folder
 
-    gulp.src(config.html.input)
+    gulp.src(config.html.input) //inject between 'bower' blocks in .html files
         .pipe(plumber())
         .pipe(wiredep({
             ignorePath: /^(\.\.\/)*\.\./
         }))
-        .pipe(gulp.dest(config.global.input));
+        .pipe(gulp.dest(config.global.input)); //injects them in src/ folder
 });
 
 //move all static files to dist folder (robots.txt, humans.txt, favicon,...)
