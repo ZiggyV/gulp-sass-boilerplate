@@ -107,15 +107,29 @@ This is how the project structure looks like:
 
 ```
 gulp-sass-boilerplate
-├── .tmp/
-├── /bower_components/
-├── /dist/
-├── /node_modules/
-├── /src/
-├── bower.json
-├── modernizr-config.json 
-└── package.json
-```
+.
+├── .tmp/                       // Temporary compiled files; used in development only
+├── /bower_components/          // 3rd party front-end packages
+├── /dist/                      // Compiled, production-ready output
+├── /node_modules/              // 3rd party libraries and utilities
+├── /src/                       // Source code; these are the only files you need to touch 
+│   ├── /fonts/                 // Project fonts; Overpass font is included by default
+│   ├── /images/                // Images folder; can have subdirectories
+│   ├── /scripts/               // Scripts folder; can have subdirectories
+│   ├── /scss/                  // Sass folder structure; can be modified to your liking
+│   │   ├── /partials/          // Split your scss code in partials
+│   │   ├── /utils/             // Mixins and other utilities 
+│   │   ├── _base.scss          // Base styles used throughout project (typography, links, ...)
+│   │   └── main.scss           // All of our Sass @imports
+│   └── index.html              // Index of our project; HTML can be in subdirectories of src
+├── bower.json                  // List of 3rd party front-end packages
+├── modernizr-config.json       // List of modernizr feature detects we want
+└── package.json                // List of 3rd party libraries and utilities
+```  
+**What about static files?**  
+Static files can be placed in the root of the `src` folder and they will be copied into the `dist` folder without changing anything (e.g. favicon.ico, robots.txt, ...).
+
+> Note: Make sure you are working in the `src/` folder. The `gulp` and `gulp dev` commands will delete the `dist/` and `.tmp/` folder before compiling again, so changes made in these folders will be lost.   
 
 <a name="license"></a> License
 ------
