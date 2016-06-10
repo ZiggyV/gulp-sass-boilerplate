@@ -1,0 +1,18 @@
+{
+  "minify": true,
+  "options": [
+    "setClasses"
+  ],
+  "feature-detects": [
+    "test/geolocation",
+    "test/svg",
+    "test/touchevents",
+    "test/css/animations",
+    "test/css/flexbox",
+    "test/css/flexboxlegacy",
+    "test/css/transforms",
+    "test/css/transforms3d",
+    "test/css/transitions",
+    "test/svg/inline"
+  ]
+}

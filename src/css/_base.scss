@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: $light-grey;
+    font-family: $ovp-regular;
+    color: $text-color;
+    @include fontsize(16px);
+
+    @include bp-medium {
+        @include fontsize(18px);
+    }
+}
+
+//remove all margins
+h1, h2, h3, h4, p {
+    margin: 0;
+    font-weight: normal;
+}
+
+//set default font sizes
+h1 {
+    color: $white;
+    font-family: $ovp-regular;
+    @include fontsize(32px);
+    margin-bottom: 25px;
+
+    @include bp-medium {
+        @include fontsize(48px);
+        margin-bottom: 30px;
+    }
+    
+    &.big__heading {
+        @include fontsize(48px);
+
+        @include bp-medium {
+            @include fontsize(64px);
+        }
+    }
+}
+
+p {
+    line-height: 21px;
+
+    @include bp-medium {
+        line-height: 24px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $secondary-color;
+    font-family: $ovp-light;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.website__section {
+    padding: 56px 0;
+
+    @include bp-normal {
+        padding: 112px 0;
+    }
+}
+
+.wrapper {
+    padding: 0 25px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.wrapper--big {
+    @extend .wrapper;
+    max-width: 1200px;
+}
+
+//this element is visible when visitor uses IE10 or below
+.browserupgrade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 9999;
+    background: $white;
+    padding: 15px;
+
+    @include bp-medium {
+        padding: 20px;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+}
+
+//clearfix: add 'cf' to container of floated elements
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+//selected text color and bg
+::-moz-selection {
+  color: $white;
+  background: $main-color;
+}
+
+::selection {
+  color: $white;
+  background: $main-color;
+}

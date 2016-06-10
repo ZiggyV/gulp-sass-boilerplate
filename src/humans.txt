@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+/* TEAM */
+
+Name: Ziggy Verstrepen.
+Site: info@ziggyv.be.
+Twitter: @zggyv.
+Location: Antwerpen, Belgium.
+
+/* SITE */
+
+Standards: HTML5, CSS3, JS
+Components: jQuery, Sass, Gulp, Bower

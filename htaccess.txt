@@ -1,0 +1,13 @@
+# rename this file to .htaccess if you want to remove www from the url and force https
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+# remove www from host
+RewriteCond %{HTTP_HOST} ^www\.(.+)
+RewriteCond %{HTTPS}s/%1 ^(on(s)|offs)/(.+)
+RewriteRule ^ http%2://%3%{REQUEST_URI} [L,R=301]
+
+# force HTTPS
+RewriteCond %{HTTPS} =off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

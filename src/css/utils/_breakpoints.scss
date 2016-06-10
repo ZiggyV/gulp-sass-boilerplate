@@ -1,0 +1,23 @@
+@mixin bp-small {
+    @media (min-width: $bp-small) {
+        @content;
+    }
+}
+
+@mixin bp-medium {
+    @media (min-width: $bp-medium) {
+        @content;
+    }
+}
+
+@mixin bp-normal {
+    @media (min-width: $bp-normal) {
+        @content;
+    }
+}
+
+@mixin bp-large {
+    @media (min-width: $bp-large) {
+        @content;
+    }
+}

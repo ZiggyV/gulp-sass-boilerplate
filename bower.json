@@ -1,0 +1,26 @@
+{
+  "name": "gulp-sass-boilerplate",
+  "description": "Gulp setup for static websites",
+  "main": "index.js",
+  "authors": [
+    "Ziggy Verstrepen"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "jquery": "~2.2.4",
+    "normalize-css": "^4.1.1",
+    "font-awesome": "fontawesome#^4.6.3"
+  },
+  "devDependencies": {
+    "reset-css": "^2.0.2011012603"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "scss/font-awesome.scss",
+        "fonts/*"
+      ]
+    }
+  }
+}
