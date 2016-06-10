@@ -7,8 +7,8 @@ What this boilerplate does for you:
 * Lints and minifies JavaScript.
 * Compiles, minifies and autoprefixes Sass. Writes sourcemaps in development.
 * Media query optimization: merges matching media queries into one definition. 
-* Optimizes images - PNG, JPG, GIF and SVG
-* Handles file concatentation with [gulp-useref](https://github.com/jonkemp/gulp-useref "gulp-useref")
+* Optimizes images - PNG, JPG, GIF and SVG.
+* Handles file concatentation with [gulp-useref](https://github.com/jonkemp/gulp-useref "gulp-useref").
 * Automatically injects assets from your bower_components to your HTML/SCSS files.  
 
 A few basic styles and mixins are included, as well as a JavaScript file with best practices based on [a podcast from DevTips](https://www.youtube.com/watch?v=RMiTxHba5fo "Refactoring Javascript with Fred Lawler"). These are completely optional and can be removed or altered according to your liking.  
@@ -37,14 +37,14 @@ Getting started
 OS X users can install Node with [Homebrew](http://brew.sh/ "Homebrew").
 
 ```
-brew install node
+$ brew install node
 ```
 
 * [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md "Getting Started with Gulp")  
 
 Install Gulp globally on your machine.    
 ```
-npm install -g gulp-cli
+$ npm install -g gulp-cli
 ```
 
 * [Bower](https://bower.io/#install-bower "Getting Started with Bower")
@@ -52,7 +52,7 @@ npm install -g gulp-cli
 Install bower globally. We use bower to manage our front-end packages (like jQuery, Normalize.css, ...).
 
 ```
-npm install -g bower
+$ npm install -g bower
 ``` 
 
 #### <a name="start"></a>Quick start  
@@ -83,14 +83,14 @@ $ gulp dev
 ```
 This command will build our project from the source files (`src/`) into a temporary folder (`.tmp/`). Also starts a local web server that watches our files for changes.
 
-> http://localhost:3000 - BrowserSync server  
-> http://localhost:3001 - BrowserSync control panel  
+> [http://localhost:3000](http://localhost:3000) - BrowserSync server  
+> [http://localhost:3001](http://localhost:3001) - BrowserSync control panel  
 
 Whenever you modify any of the files in the `src/` folder, our project will be recompiled and the browser refreshes automatically. Note that the `gulp dev` command will **not** optimize or minifiy any of the compiled output files. This command is for development only.
 
-> Don't know how to cancel this command? Hit `CTRL+C`  
+> Don't know how to cancel a command in your terminal? Simply hit `CTRL+C`  
 
-What are these style guidelines?  
+**What are these style guidelines?**  
 This is to help me keep consistent throughout my project :). You can easily remove these by deleting `styleguide.html` and `scss/partials/_styleguide.scss` in the `src/` folder.    
 
 #### 4. Build  
@@ -99,10 +99,8 @@ If your project is ready to go online, create a production-ready build by runnin
 ```
 $ gulp
 ```  
-After running this command, the `dist/` folder will contain our production-ready build. You can now copy its contents to your site's `/public_html/` via a FTP client like [FileZilla](https://filezilla-project.org/ "FileZilla"). 
-
-
+After running this command, the `dist/` folder will contain our production-ready build. You can now copy its contents to your site's `/public_html/` via a FTP client like [FileZilla](https://filezilla-project.org/ "FileZilla").  
 
 <a name="license"></a> License
 ------
-[MIT](../blob/master/LICENSE "License")
+[MIT](../master/LICENSE "License")
