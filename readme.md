@@ -29,21 +29,22 @@ Getting started
   * [Changing the folder structure](#changestructure)
   * [Bower](#bower)  
 
-###Installation
+### Installation
 #### <a name="requirements"></a>Requirements  
 
 * [Node.js](https://nodejs.org/en/ "Node.js") 
 
 OS X users can install Node with [Homebrew](http://brew.sh/ "Homebrew").
 
-```
+```shell
 $ brew install node
 ```
 
 * [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md "Getting Started with Gulp")  
 
-Install Gulp globally on your machine.    
-```
+Install Gulp globally on your machine.
+
+```shell
 $ npm install -g gulp-cli
 ```
 
@@ -51,7 +52,7 @@ $ npm install -g gulp-cli
 
 Install bower globally. We use bower to manage our front-end packages (like jQuery, Normalize.css, ...).
 
-```
+```shell
 $ npm install -g bower
 ``` 
 
@@ -59,7 +60,7 @@ $ npm install -g bower
 ##### 1. Get the latest version  
 [Download](https://github.com/ZiggyV/gulp-sass-boilerplate/archive/master.zip "Download .zip") or clone the latest version of this boilerplate on your local machine by running:
 
-```
+```shell
 $ git clone https://github.com/ZiggyV/gulp-sass-boilerplate.git MyProject  
 $ cd MyProject
 ```
@@ -67,7 +68,7 @@ $ cd MyProject
 ##### 2. Install dependencies
 Install our project dependencies and developer tools listed in `package.json` and `bower.json` by running:
 
-```
+```shell
 $ npm install  
 $ bower install  
 
@@ -78,7 +79,7 @@ $ npm install && bower install
 ##### 3. Start developing
 When it's done installing, you can start developing by running:  
 
-```
+```shell
 $ gulp dev
 ```
 This command will build our project from the source files (`src/`) into a temporary folder (`.tmp/`). Also starts a local web server that watches our files for changes.
@@ -96,10 +97,25 @@ This is to help me keep consistent throughout my project :). You can easily remo
 #### 4. Build  
 If your project is ready to go online, create a production-ready build by running:
 
-```
+```shell
 $ gulp
 ```  
 After running this command, the `dist/` folder will contain our production-ready build. You can now copy its contents to your site's `/public_html/` via a FTP client like [FileZilla](https://filezilla-project.org/ "FileZilla").  
+
+### <a name="structure"></a>Project structure  
+This is how the project structure looks like:
+
+```
+gulp-sass-boilerplate
+├── .tmp/
+├── /bower_components/
+├── /dist/
+├── /node_modules/
+├── /src/
+├── bower.json
+├── modernizr-config.json 
+└── package.json
+```
 
 <a name="license"></a> License
 ------
