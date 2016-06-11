@@ -1,6 +1,6 @@
 Gulp boilerplate
 ======
-A front-end boilerplate using [Gulp](http://gulpjs.com/ "Gulp.js") as build tool. Based on Yeoman's [webapp generator](https://github.com/yeoman/generator-webapp "Yeoman Webapp Generator"), various other blogs/tutorials and my own experience through the years.  
+A front-end boilerplate using [Gulp](http://gulpjs.com/ "Gulp.js") as build tool. Based on Yeoman's [webapp generator](https://github.com/yeoman/generator-webapp "Yeoman Webapp Generator"), various other blogs/tutorials and my own experience.  
 
 What this boilerplate does for you:
 * Live reloading and synchronization with [BrowserSync](https://www.browsersync.io/ "BrowserSync")
@@ -9,7 +9,7 @@ What this boilerplate does for you:
 * Media query optimization: merges matching media queries into one definition. 
 * Optimizes images - PNG, JPG, GIF and SVG.
 * Handles file concatentation with [gulp-useref](https://github.com/jonkemp/gulp-useref "gulp-useref").
-* Automatically injects assets from your bower_components to your HTML/SCSS files.  
+* Automatically injects assets from your `bower_components` to your HTML/SCSS files.  
 
 A few basic styles and mixins are included, as well as a JavaScript file with best practices based on [a podcast from DevTips](https://www.youtube.com/watch?v=RMiTxHba5fo "Refactoring Javascript with Fred Lawler"). These are completely optional and can be removed or altered according to your liking.  
 
@@ -25,7 +25,7 @@ Getting started
   * [Images](#images)
   * [Fonts](#fonts)
   * [Modernizr](#modernizr)
-  * [Bower](#bower)  
+  * [Bower components](#bowerc)  
   * [Changing the folder structure](#changestructure)
 4. [Dependencies](#dependencies)  
 5. [Tasks](#tasks)  
@@ -97,7 +97,7 @@ Whenever you modify any of the files in the `src/` folder, our project will be r
 **What are these style guidelines?**  
 This is to help me keep consistent throughout my project :). You can easily remove these by deleting `styleguide.html` and `scss/partials/_styleguide.scss` in the `src/` folder.    
 
-### 4. Build  
+#### 4. Build  
 If your project is ready to go online, create a production-ready build by running:
 
 ```shell
@@ -133,7 +133,7 @@ gulp-sass-boilerplate
 **What about static files?**  
 Static files can be placed in the root of the `src` folder and they will be copied into the `dist` folder without changing anything (e.g. favicon.ico, robots.txt, ...).
 
-> Note: Make sure you are working in the `src/` folder. The `gulp` and `gulp dev` commands will delete the `dist/` and `.tmp/` folder before compiling again, so changes made in these folders will be lost.  
+> **Note**: Make sure you are working in the `src/` folder. The `gulp` and `gulp dev` commands will delete the `dist/` and `.tmp/` folder before compiling again, so changes made in these folders will be lost.  
 
 <a name="config"></a> Configuration
 ------
@@ -145,9 +145,9 @@ Static files can be placed in the root of the `src` folder and they will be copi
 
 ### <a name="modernizr"></a> Modernizr
 
-### <a name="bower"></a> Bower
+### <a name="bowerc"></a> Bower
 
-### <a name="structure"></a> Change the folder structure
+### <a name="changestructure"></a> Changing the folder structure
 
 <a name="Dependencies"></a> Dependencies
 ------  
@@ -155,7 +155,7 @@ A list of all the dependencies used in this project and a brief explanation for 
 
 ### NPM
 * [`autoprefixer`](https://github.com/postcss/autoprefixer "autoprefixer"): Automatically adds vendor prefixes to CSS rules.
-* [`browser-sync`](https://github.com/BrowserSync/browser-sync "browser-sync): Creates a small server. Used in this project for live reloading and synchronization between browsers.  
+* [`browser-sync`](https://github.com/BrowserSync/browser-sync "browser-sync"): Creates a small server. Used in this project for live reloading and synchronization between browsers.  
 * [`del`](https://github.com/sindresorhus/del "del"): Deletes files and folders. In this case the `dist/` and `.tmp/` folder whenever you run the `gulp` or `gulp dev` command.   
 * [`gulp`](http://gulpjs.com/ "gulp"): Build system that automates common tasks during development.
 * [`gulp-cache`](https://github.com/jgable/gulp-cache "gulp-cache"): Caches result of a task. 
@@ -165,7 +165,7 @@ A list of all the dependencies used in this project and a brief explanation for 
 * [`gulp-if`](https://github.com/robrich/gulp-if "gulp-if"): Conditionally run tasks.
 * [`gulp-imagemin`](https://github.com/sindresorhus/gulp-imagemin "gulp-imagemin"): Optimizes images - PNG, JPG, GIF and SVG.  
 * [`gulp-jshint`](https://github.com/spalger/gulp-jshint "gulp-jshint"): Gulp plugin for JSHint. Lints JavaScript errors. 
-* [`gulp-merge-media-queries`](https://github.com/roaiven/gulp-merge-media-queries "gulp-merge-media-queries"): Merges matching media queries into one definition. Very useful since I use a breakpoint mixin which outputs to multiple @media rules when compiled. Mmq will recompile matching media queries into one rule.
+* [`gulp-merge-media-queries`](https://github.com/roaiven/gulp-merge-media-queries "gulp-merge-media-queries"): Merges matching media queries into one definition. Very useful since I use a breakpoint mixin which outputs to multiple @media rules when compiled. Mmq will merge matching media queries into one rule.
 * [`gulp-plumber`](https://github.com/floatdrop/gulp-plumber "gulp-plumber"): Prevents pipe breaking caused by errors from gulp plugins.
 * [`gulp-postcss`]( "gulp-postcss"): Pipe CSS through several preprocessors (`autoprefixer`, `cssnano`), but only parse it once.  
 * [`gulp-sass`](https://github.com/dlmanning/gulp-sass "gulp-sass"): Compiles Sass to CSS with [`LibSass`](https://github.com/sass/libsass "libsass").
@@ -173,8 +173,10 @@ A list of all the dependencies used in this project and a brief explanation for 
 * [`gulp-size`](https://github.com/sindresorhus/gulp-size "gulp-size"): Display the size of the compiled output in your command line/terminal. 
 * [`gulp-sourcemaps`](https://github.com/floridoo/gulp-sourcemaps "gulp-sourcemaps"): Adds inline or external source maps. Useful when debugging compressed code. 
 * [`gulp-uglify`](https://github.com/terinjokes/gulp-uglify "gulp-uglify"): Minifies JavaScript. 
+* [`gulp-uncss`](https://github.com/ben-eb/gulp-uncss "gulp-uncss"): Removes unused CSS. Great for cleaning up external resources (e.g. Bootstrap, Font Awesome).
 * [`gulp-useref`](https://github.com/jonkemp/gulp-useref "gulp-useref"): Concatenates files between `build` blocks in your HTML.
 * [`jshint`](https://github.com/jshint/jshint "jshint"): Detects errors in your JavaScript code.
+* [`lazypipe`](https://github.com/OverZealous/lazypipe "lazypipe"): Allows you to create a lazily-initialized pipeline.
 * [`main-bower-files`](https://github.com/ck86/main-bower-files "main-bower-files"): Returns all main bower files specified in `bower.json`. This can be overwritten in our own `bower.json` and you can also filter on a certain file type.     
 * [`wiredep`](https://github.com/taptapship/wiredep "wiredep"): Automatically includes your Bower components between the `bower` blocks in your HTML/SCSS. Based on your dependencies in the `bower.json` file. devDependencies will not be injected automatically. 
 

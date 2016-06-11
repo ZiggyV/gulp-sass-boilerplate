@@ -28,9 +28,8 @@
     <title>Gulp boilerplate</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <!-- Stylesheets -->
-    <!-- Switch the reset-css dependency with normalize-css   -->
-
+    <!-- Stylesheets - Bower components will be automatically injected -->
+    <!-- Switch the reset-css dependency with normalize-css if your prefer a reset -->
     <!-- build:css css/main.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css" />
@@ -60,14 +59,14 @@
         </section>
     </div>
 
-    <!-- External javascript files (e.g. jQuery) -->
+    <!-- External javascript files (e.g. jQuery) - automatically injected -->
     <!-- build:js js/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- Main javascript file -->
+    <!-- Main javascript file(s) -->
     <!-- build:js js/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->

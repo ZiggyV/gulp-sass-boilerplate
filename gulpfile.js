@@ -11,14 +11,16 @@ var autoprefixer = require('autoprefixer'),
     htmlmin = require('gulp-htmlmin'),
     imagemin = require('gulp-imagemin'),
     jshint = require('gulp-jshint'),
+    lazypipe = require('lazypipe'),
     mainBowerFiles = require('main-bower-files'),
     mergequeries = require('gulp-merge-media-queries'),
     plumber = require('gulp-plumber'),
     postcss = require('gulp-postcss'),
-    uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
     size = require('gulp-size'),
     sourcemaps = require('gulp-sourcemaps'),
+    uglify = require('gulp-uglify'),
+    uncss = require('gulp-uncss'),
     useref = require('gulp-useref'),
     wiredep = require('wiredep').stream;
 
@@ -151,30 +153,38 @@ gulp.task('images', function() {
                 optimizationLevel: 6,
                 progressive: true, 
                 interlaced: true,
-                svgoPlugins: [{ cleanupIDs: false }], //don't remove IDs from SVG files
+                svgoPlugins: [{ cleanupIDs: false }] //don't remove IDs from SVG files
             }))) 
         .pipe(gulp.dest(config.images.output));
 });
 
 //make js, css and html files ready for deployment: 
-//js files between <--build:js --> will be concatenated and uglified
-//css files between <--build:css --> will be concatenated and minified (no autoprefixer because our styles task took care of that)
+//js files between 'build:js' blocks in our HTML will be concatenated and uglified
+//css files between 'build:css' in our HTML will be concatenated, minified and unused css will be removed
 //html files will be minified
 gulp.task('build', ['styles'], function() {
     return gulp.src(config.html.input)
         .pipe(plumber())
         .pipe(useref({ searchPath: ['.tmp', 'src', '.'] }))
         .pipe(gulpif('*.js', uglify()))
-        .pipe(gulpif('*.css', cssnano({ 
-            safe: true, 
-            autoprefixer: false,  
-            discardComments: {
-                removeAll: true //remove all comments
-            }
-        })))
+        .pipe(gulpif('*.css', optimizeCss())) //optimize css by calling a lazily-initialized pipeline 
         .pipe(gulpif('*.html', htmlmin({ collapseWhitespace: true })))
         .pipe(gulp.dest(config.global.output))
 });
+
+//with lazypipe we can create a chain of events in our gulpif condition
+//uncss will remove unused css and cssnano will minify it
+var optimizeCss = lazypipe()
+    .pipe(uncss, { 
+        html: [config.html.input] //which html files uncss should check
+    })
+    .pipe(cssnano, { 
+        safe: true, // http://cssnano.co/options/#optionssafe-bool
+        autoprefixer: false, //don't autoprefix - our styles task already took care of that
+        discardComments: { 
+            removeAll: true //remove all comments 
+        }
+    }); 
 
 //inject bower components in SCSS and HTML files
 gulp.task('wiredep', function() {
