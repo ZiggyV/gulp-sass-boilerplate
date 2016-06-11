@@ -5,7 +5,8 @@ A front-end boilerplate using [Gulp](http://gulpjs.com/ "Gulp.js") as build tool
 What this boilerplate does for you:
 * Live reloading and synchronization with [BrowserSync](https://www.browsersync.io/ "BrowserSync")
 * Lints and minifies JavaScript.
-* Compiles, minifies and autoprefixes Sass. Writes sourcemaps in development.
+* Compiles Sass with [`libSass`](https://github.com/sass/libsass "libsass"). Writes sourcemaps in development.
+* Autoprefixes, minifies and removes unused css.
 * Media query optimization: merges matching media queries into one definition. 
 * Optimizes images - PNG, JPG, GIF and SVG.
 * Handles file concatentation with [gulp-useref](https://github.com/jonkemp/gulp-useref "gulp-useref").
@@ -168,7 +169,7 @@ A list of all the dependencies used in this project and a brief explanation for 
 * [`gulp-merge-media-queries`](https://github.com/roaiven/gulp-merge-media-queries "gulp-merge-media-queries"): Merges matching media queries into one definition. Very useful since I use a breakpoint mixin which outputs to multiple @media rules when compiled. Mmq will merge matching media queries into one rule.
 * [`gulp-plumber`](https://github.com/floatdrop/gulp-plumber "gulp-plumber"): Prevents pipe breaking caused by errors from gulp plugins.
 * [`gulp-postcss`]( "gulp-postcss"): Pipe CSS through several preprocessors (`autoprefixer`, `cssnano`), but only parse it once.  
-* [`gulp-sass`](https://github.com/dlmanning/gulp-sass "gulp-sass"): Compiles Sass to CSS with [`LibSass`](https://github.com/sass/libsass "libsass").
+* [`gulp-sass`](https://github.com/dlmanning/gulp-sass "gulp-sass"): Compiles Sass to CSS with [`libSass`](https://github.com/sass/libsass "libsass").
 * [`gulp-sequence`](https://github.com/teambition/gulp-sequence "gulp-sequence"): Perform `gulp` tasks in a specific sequence. Used in this project to clean our `.tmp/` and `dist/` folders before other tasks run.
 * [`gulp-size`](https://github.com/sindresorhus/gulp-size "gulp-size"): Display the size of the compiled output in your command line/terminal. 
 * [`gulp-sourcemaps`](https://github.com/floridoo/gulp-sourcemaps "gulp-sourcemaps"): Adds inline or external source maps. Useful when debugging compressed code. 
