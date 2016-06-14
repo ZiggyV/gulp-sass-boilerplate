@@ -30,43 +30,43 @@ var reload = browserSync.reload,
 
 //project paths
 var config = {
-    global: {
+    global: { //main folders
         input: 'src',
         output: 'dist',
         tmp: '.tmp'
     },
-    bower: {
+    bower: { //bower.json file
         input: 'bower.json'
     },
-    clean: {
+    clean: { //generated directories
         tmp: '.tmp/*',
         dist: 'dist/*'
     },
-    fonts: {
-        input: 'src/fonts/**/*',
+    fonts: { //font paths
+        input: 'src/fonts/**/*', 
         output: 'dist/fonts',
-        bower: '**/*.{eot,svg,ttf,woff,woff2}',
+        bower: '**/*.{eot,svg,ttf,woff,woff2}', //we only need these file types for the 'fonts' task
         tmp: '.tmp/fonts'
-    },
-    html: {
+    }, 
+    html: { //html paths
         input: 'src/**/*.html',
     },
-    images: {
+    images: { //image paths
         input: 'src/images/**/*',
         output: 'dist/images'
     },
-    scripts: {
+    scripts: { //script paths
         input: 'src/scripts/**/*.js',
         output: 'dist/js',
         tmp: '.tmp/js'
     },
-    size: {
+    size: { //dislays size of the folder below it's build
         output: 'dist/**/*'
     },
-    static: {
+    static: { //static files --> everything except html files
         input: ['src/*.*', '!src/*.html']
     },
-    styles: {
+    styles: { //style paths
         all: 'src/scss/**/*.{scss,sass}',
         input: 'src/scss/main.{scss,sass}',
         output: 'dist/css',
@@ -132,17 +132,10 @@ gulp.task('scripts', function() {
 //move fonts to dist and tmp
 //also moves used fonts from bower_components (like fontawesome) --> override main option in bower.json
 gulp.task('fonts', function() {
-    return gulp.src(mainBowerFiles(config.fonts.bower, function(err){}) // get the main bower files, filter by ext: eot,svg,ttf,woff or woff2 
+    return gulp.src(mainBowerFiles(config.fonts.bower, function(err){}) // get the main bower files, filter by ext: eot,svg,ttf,woff or woff2 for this task
         .concat(config.fonts.input)) //concatenate our own fonts to the array
         .pipe(gulp.dest(config.fonts.tmp))
         .pipe(gulp.dest(config.fonts.output));
-});
-
-//show the used fonts in your console; this is only a small helper function
-gulp.task('fonts:show', function() {
-    var fonts = (mainBowerFiles(config.fonts.bower, function(err){})
-        .concat(config.fonts.input));
-    console.log(fonts);
 });
 
 //compress images - PNG, JPG, GIF, SVG

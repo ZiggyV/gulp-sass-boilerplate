@@ -13,7 +13,8 @@
     "font-awesome": "fontawesome#^4.6.3"
   },
   "devDependencies": {
-    "reset-css": "^2.0.2011012603"
+    "reset-css": "^2.0.2011012603",
+    "animate.css": "^3.5.2"
   },
   "overrides": {
     "font-awesome": {

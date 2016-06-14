@@ -1,16 +1,12 @@
-.container__intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.container {
+    display: table;
+    width: 100%;
     height: 100%;
     background-color: $main-color;
 
-    .big__heading {
-        text-align: center;
-    }
-
-    p {
+    #intro {
+        display: table-cell;
+        vertical-align: middle;
         text-align: center;
     }
 

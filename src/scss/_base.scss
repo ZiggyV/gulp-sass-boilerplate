@@ -26,13 +26,12 @@ h1, h2, h3, h4, p {
 //set default font sizes
 h1 {
     color: $white;
-    font-family: $ovp-regular;
     @include fontsize(32px);
-    margin-bottom: 25px;
+    margin-bottom: 24px;
 
     @include bp-medium {
         @include fontsize(48px);
-        margin-bottom: 30px;
+        margin-bottom: 32px;
     }
     
     &.big__heading {
@@ -64,7 +63,7 @@ ul {
     list-style-type: none;
 }
 
-.website__section {
+section {
     padding: 56px 0;
 
     @include bp-normal {
