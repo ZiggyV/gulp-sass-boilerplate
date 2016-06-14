@@ -104,16 +104,14 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], function() {
 
 //compile scss, autoprefix with postcss and make sourcemap
 gulp.task('styles', function() {
-    return gulp.src(config.styles.input)
-        //plumber prevents pipe breaking caused by errors from gulp plugins
-        .pipe(plumber())
+    return gulp.src(config.styles.all)
+        .pipe(plumber()) //plumber prevents pipe breaking caused by errors from gulp plugins
         .pipe(sourcemaps.init())
         .pipe(sass({ 
             outputStyle: 'nested', //output values: nested, expanded, compact and compressed
             includePaths: ['.'] //resolves Sass @imports for external libraries
         }).on('error', sass.logError)) 
         .pipe(postcss([autoprefixer({ browsers: autoprefixList })])) //autoprefix css with earlier specified list
-        .pipe(mergequeries({ log: false })) //merge media queries - put true if you wanna see which media queries were processed
         .pipe(sourcemaps.write()) //write sourcemap
         .pipe(gulp.dest(config.styles.tmp)) //output to tmp/css folder (dev only)
         .pipe(reload({ stream: true }));
@@ -153,7 +151,7 @@ gulp.task('images', function() {
 
 //make js, css and html files ready for deployment: 
 //js files between 'build:js' blocks in our HTML will be concatenated and uglified
-//css files between 'build:css' in our HTML will be concatenated, minified and unused css will be removed
+//css files between 'build:css' in our HTML will be concatenated, minified and unused css will be removed; matching media queries will be merged
 //html files will be minified
 gulp.task('build', ['styles'], function() {
     return gulp.src(config.html.input)
@@ -171,6 +169,9 @@ var optimizeCss = lazypipe()
     .pipe(uncss, { 
         html: [config.html.input] //which html files uncss should check
     })
+    .pipe(mergequeries, { 
+        log: false //merge media queries - put true if you wanna see which media queries were processed
+    }) 
     .pipe(cssnano, { 
         safe: true, // http://cssnano.co/options/#optionssafe-bool
         autoprefixer: false, //don't autoprefix - our styles task already took care of that

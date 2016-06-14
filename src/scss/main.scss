@@ -1,18 +1,22 @@
-//import scss assets from your bower_components; this will be done automatically
+//import utils
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/placeholders';
+
+//import scss assets from your bower_components - this will be done automatically
 // bower:scss
 @import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
-//import utils
-@import 'utils/fonts';
-@import 'utils/variables';
-@import 'utils/breakpoints';
-@import 'utils/fontsize';
-@import 'utils/gradient';
-
 //import base
-@import 'base';
+@import 'base/fonts';
+@import 'base/base';
 
 //import partials
-@import 'partials/index';
-@import 'partials/styleguide';
+@import 'partials/buttons';
+@import 'partials/grid';
+
+//import pagges
+@import 'pages/index';
+@import 'pages/styleguide';

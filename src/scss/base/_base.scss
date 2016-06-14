@@ -25,16 +25,15 @@ h1, h2, h3, h4, p {
 
 //set default font sizes
 h1 {
-    color: $white;
+    font-family: $ovp-regular;
     @include fontsize(32px);
-    margin-bottom: 24px;
 
     @include bp-medium {
         @include fontsize(48px);
-        margin-bottom: 32px;
     }
     
     &.big__heading {
+         font-family: $ovp-light;
         @include fontsize(48px);
 
         @include bp-medium {
@@ -43,18 +42,53 @@ h1 {
     }
 }
 
-p {
-    line-height: 21px;
+h2 {
+    font-family: $ovp-light;
+    @include fontsize(24px);
 
     @include bp-medium {
-        line-height: 24px;
+        @include fontsize(32px);
+    }
+}
+
+h3 {
+    font-family: $ovp-regular;
+    @include fontsize(21px);
+
+    @include bp-medium {
+        @include fontsize(24px);
+    }
+}
+
+h4 {
+    font-family: $ovp-bold;
+    @include fontsize(18px);  
+    
+    @include bp-medium {
+        @include fontsize(21px);
+    }  
+}
+
+p {
+    line-height: 24px;
+
+    &.small {
+        @include fontsize(14px);
+        line-height: 21px;
+    }
+
+    &.thin {
+        font-family: $ovp-thin;
+        color: $light-text-color;
+    }
+
+    &.bold {
+        font-family: $ovp-bold;
     }
 }
 
 a {
     text-decoration: none;
-    color: $secondary-color;
-    font-family: $ovp-light;
 }
 
 ul {
@@ -98,7 +132,7 @@ section {
     }
     
     a {
-        text-decoration: underline;
+        @extend %link;
     }
 }
 

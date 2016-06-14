@@ -8,10 +8,18 @@
         display: table-cell;
         vertical-align: middle;
         text-align: center;
+
+        h1 {
+            color: $white;
+            margin-bottom: 24px;
+
+            @include bp-medium {
+                margin-bottom: 32px;
+            }
+        }
     }
 
     .index__link {
-        color: $secondary-color;
-        text-decoration: underline;
+        @extend %link;
     }
 }

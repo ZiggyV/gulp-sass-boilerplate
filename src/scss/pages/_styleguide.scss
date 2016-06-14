@@ -12,19 +12,12 @@
             background: $white;
         }
 
-        .para__title {
-            font-family: $ovp-bold;
-
+        .bold {
             span {
                 margin-right: 16px;
                 color: $light-text-color;
                 font-family: $ovp-light;
             }
-        }
-
-        .para__sub {
-            color: $light-text-color;
-            font-family: $ovp-thin;
         }
     }
 
@@ -41,6 +34,15 @@
             text-align: center;
         }
 
+        h1 {
+            margin-bottom: 24px;
+            color: $white;
+
+            @include bp-medium {
+                margin-bottom: 32px;
+            }
+        }
+
         p {
             color: $white;
 
@@ -49,7 +51,7 @@
             }
 
             a {
-                text-decoration: underline;
+                @extend %link;
             }
         }
     }
@@ -144,7 +146,7 @@
                 margin-top: 32px;
             }
 
-            .grid__row {
+            .image__grid__row {
                 .grid__vertical {
                     position: relative;
                     width: 100%;
@@ -183,7 +185,7 @@
                         &.img-3 {
                             top: 0;
                             bottom: 0;
-                            background: url('../images/img-3.jpg') no-repeat center center;
+                            background: url('../images/img-5.jpg') no-repeat center center;
                         }
                     }
                 }
@@ -204,7 +206,7 @@
                             background: url('../images/img-4.jpg') no-repeat center center;
                         }
                         &.img-5 {
-                            background: url('../images/img-5.jpg') no-repeat center center;
+                            background: url('../images/img-3.jpg') no-repeat center center;
                         }
                         &.img-6 {
                             top: 0;
@@ -225,7 +227,119 @@
                 margin-top: 32px;
             }
 
+            .typo__item {
+                border-bottom: 1px solid $grey;
+                margin-bottom: 24px;
+                padding-bottom: 24px;
 
+                @include bp-medium {
+                    margin-bottom: 32px;
+                    padding-bottom: 32px;
+                }
+
+                &:last-of-type {
+                    border-bottom: none;
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                }
+            }
+
+            .typo {                
+                @include bp-medium {
+                    float: left;
+                }
+
+                &.typo__desc {
+                    @include bp-medium {
+                        width: 25%;                    
+                    }
+
+                    .bold {
+                        margin-bottom: 16px;
+                    }
+
+                    .small {
+                        color: $light-text-color;
+                    }
+                }
+
+                &.typo__example {
+                    margin-top: 16px;
+
+                    @include bp-medium {
+                        margin-top: 0;
+                        width: 75%;                    
+                    }
+                }
+            }
+        }
+    }
+
+    #buttons {
+        .grid__row {
+            margin-bottom: 16px;
+            
+            @include bp-medium {
+                margin-bottom: 32px;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            .grid__item {
+                margin-bottom: 16px;
+
+                @include bp-medium {
+                    margin-bottom: 0;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                .button {
+                    &.hovered {
+                        background: darken($main-color, 5%);
+                    }
+
+                    &.button__small {
+                        margin-top: 16px;
+                    }
+                }
+            }
+
+            &.reversed__buttons {
+                .button {
+                    background: transparent;
+                    border: 1px solid $main-color;
+                    color: $main-color;
+                    
+                    &:hover {
+                        background: $main-color;
+                        color: $white;
+                    }
+
+                    &.hovered {
+                        background: $main-color;
+                        color: $white;
+                    }
+                }
+            }
+
+            &.tertiary__buttons {
+                .button {
+                    background: $tertiary-color;
+                    
+                    &:hover {
+                        background: darken($tertiary-color, 5%);
+                    }
+
+                    &.hovered {
+                        background: darken($tertiary-color, 5%);
+                    }
+                }
+            }
         }
     }
 }

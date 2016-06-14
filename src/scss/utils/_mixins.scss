@@ -1,3 +1,4 @@
+//GRADIENT MIXINS
 //top to bottom
 @mixin verticalGradient($top, $bottom){
     background: $top; //fallback for old browsers
@@ -12,5 +13,37 @@
     background: -webkit-linear-gradient(left,  $left 0%, $right 100%); 
     background: -moz-linear-gradient(left,  $left 0%, $right 100%);    
     background: linear-gradient(to right,  $left 0%, $right 100%); 
+}
+
+//FONTSIZE MIXIN
+//calculates rem for given px size
+@mixin fontsize($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+//BREAKPOINT MIXINS
+@mixin bp-small {
+    @media (min-width: $bp-small) {
+        @content;
+    }
+}
+
+@mixin bp-medium {
+    @media (min-width: $bp-medium) {
+        @content;
+    }
+}
+
+@mixin bp-normal {
+    @media (min-width: $bp-normal) {
+        @content;
+    }
+}
+
+@mixin bp-large {
+    @media (min-width: $bp-large) {
+        @content;
+    }
 }
 
