@@ -132,7 +132,7 @@ Static files can be placed in the root of the `src` folder and they will be copi
 ------
 ### <a name="sass"></a> Sass
 
-This boilerplate uses Sass as its CSS preprocessor. To keep our code clean and DRY (Don't Repeat Yourself), we split our Sass code into multiple files and folders. I based this boilerplate on the [Sass Guidelines architecture](https://sass-guidelin.es/#architecture "Sass Guidelines"), but I only use 4 different folders and 1 main file (main.scss) where we import all of our seperate files.  
+This boilerplate uses Sass as its CSS preprocessor. To keep our code clean and DRY (Don't Repeat Yourself), we split our Sass code into multiple files and folders. This boilerplate is based on the [Sass Guidelines architecture](https://sass-guidelin.es/#architecture "Sass Guidelines"), but it only uses 4 different folders and 1 main file (main.scss) where we import all of our seperate files.  
 
 Our Sass folder structure looks like this:
 
@@ -239,7 +239,7 @@ now our HTML files will look like this:
 <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
 <!-- endbower -->
 ```
-> Notice how the asset gets injected automatically? Pretty neat, right? This just proves how powerful this feature is! You can install and use a Bower package with just one command without the need of updating your files manually.
+> Notice how the asset gets injected automatically? Pretty neat, right? This just proves how powerful this feature is! You can install and use Bower packages with just one command without the need of updating your files manually.
 
 **HTML/SCSS files not updating automatically?**  
 If there are any problems, it's probally due to an incorrect `main` field in the package's `bower.json` file. This field value determines which asset the `wiredep` task is going to inject in our HTML/SCSS. Luckily for us we can [override](https://github.com/taptapship/wiredep#bower-overrides "Override bower.json") this value in our own `bower.json`.
