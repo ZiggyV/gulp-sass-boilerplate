@@ -1,0 +1,117 @@
+form {
+    .contact__row {
+        margin-bottom: 24px;
+
+        @include bp-medium {
+            float: left;
+            width: 35%;
+            margin-right: 5%;
+
+            &:last-of-type {
+                width: 60%;
+                margin-right: 0;
+            }
+        }
+    }
+
+    .no--margin {
+        margin: 0;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid $main-color;
+        color: $text-color;
+        outline: 0;
+        margin-bottom: 16px;
+        font-family: $ovp-light;
+        border-radius: 3px;
+
+        &:focus {
+            color: $main-color;
+        }
+    }
+
+    textarea {
+        @extend input;
+
+        min-height: 163px;
+        margin-bottom: 0;
+    }
+
+    input[type="submit"] {
+        display: inline-block;
+        width: 100%;
+        min-width: 175px;
+        background: $main-color;
+        color: $white;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: .2s $cubic;
+        margin-bottom: 0;
+
+        @include bp-small {
+            width: auto;
+        }
+
+        &:hover {
+            background: darken($main-color, 5%);
+        }
+    }
+
+    .input__dotted {
+        width: 100%;
+        padding: 32px 24px;
+        border: 1px dashed $main-color;
+        border-radius: 3px;
+        text-align: center;
+
+        label {
+            border: 1px solid $main-color;
+            padding: 8px 16px;
+            border-radius: 3px;
+            font-family: $ovp-light;
+            color: $main-color;
+            cursor: pointer;
+            display: inline-block;
+            transition: .2s $cubic;
+
+            &:hover {
+                color: darken($main-color, 15%);
+                border-color: darken($main-color, 15%);
+            }
+
+            i {
+                margin-right: 8px;
+            }
+        }
+    }
+
+    input[type="file"] {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .error {
+        color: $error;
+        margin-top: 16px;
+        margin-bottom: 0 !important;
+        text-align: center;
+        display: none;
+
+        @include bp-small {
+            text-align: left;
+        }
+    }
+
+    .success {
+        @extend .error;
+
+        color: $success;
+    }
+}

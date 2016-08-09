@@ -29,6 +29,12 @@
     }
 }
 
+@mixin bp-random {
+    @media (min-width: $bp-random) {
+        @content;
+    }
+}
+
 @mixin bp-medium {
     @media (min-width: $bp-medium) {
         @content;
@@ -43,6 +49,12 @@
 
 @mixin bp-large {
     @media (min-width: $bp-large) {
+        @content;
+    }
+}
+
+@mixin bp-xlarge {
+    @media (min-width: $bp-xlarge) {
         @content;
     }
 }

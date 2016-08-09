@@ -1,17 +1,17 @@
 //3 column grid
 .grid {
-    margin-top: 24px;
-
-    @include bp-medium {
-        margin-top: 32px;
-    }
-
     .grid__row {
+        margin-bottom: 40px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
         .grid__item {
             @include bp-medium {
                 float: left;
-                width: 32%;
-                margin-right: 2%;
+                width: 30%;
+                margin-right: 5%;
 
                 &:nth-child(3n+3) {
                     margin-right: 0;

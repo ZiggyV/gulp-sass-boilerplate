@@ -1,25 +1,443 @@
 .container {
-    display: table;
-    width: 100%;
     height: 100%;
-    background-color: $main-color;
+}
 
-    #intro {
-        display: table-cell;
-        vertical-align: middle;
-        text-align: center;
+// NAVBAR
+#navbar {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: $white;
+    transition: .2s $cubic;
 
-        h1 {
+    @include bp-medium {
+        background: transparent;
+        border-bottom: 1px solid rgba($white, .5);
+
+        &.scrolled {
+            background: $white;
+            border-bottom: 1px solid rgba(0,0,0,0.15);    
+
+            a {
+                padding: 16px 0;
+                color: $text-color;
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }    
+    }
+
+    a {
+        color: $text-color;
+        font-family: $ovp-light;
+        text-transform: uppercase;
+        padding: 16px;
+        display: block;
+        transition: .2s $cubic;
+
+        @include bp-medium {
+            padding: 24px 0;
             color: $white;
-            margin-bottom: 24px;
+        }
 
+        i {
+            margin-right: 8px;
+        }
+    }
+
+    .navbar__toggle {
+        margin: 0 -25px;
+        
+        a {
+            border-bottom: 1px solid rgba(0 , 0, 0, .15);
+        }
+
+        @include bp-medium {
+            display: none;
+        }
+    }
+
+    .navbar__container {
+        margin: 0 -25px;
+        display: none;
+
+        @include bp-medium {
+            display: block !important;
+            margin: 0;
+        }
+    }
+
+    .navbar__left {
+        border-bottom: 1px solid rgba(0, 0, 0, .15);
+        
+        @include bp-medium {
+            float: left;
+            border-bottom: none;        
+        }
+
+        li {
             @include bp-medium {
-                margin-bottom: 32px;
+                float: left;
+                margin-right: 40px;
             }
         }
     }
 
-    .index__link {
-        @extend %link;
+    .navbar__right {
+        border-bottom: 1px solid rgba(0, 0, 0, .15);
+
+        @include bp-medium {
+            float: right;
+            border-bottom: none;
+        }
+    }
+}
+
+// INTRO
+#intro {
+    background: url('../images/bg.jpg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    height: 100%;
+
+    .intro__image {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 100;
+
+        @include bp-normal {
+            top: 46%;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+
+            @include bp-medium {
+                width: 250px;
+            }
+        }
+    }
+
+    .intro__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($black, .75);
+    }
+
+    .triangle {
+        display: none;
+        position: absolute;
+        bottom: -1px;
+        z-index: 1;
+        width: 104%;
+        margin: 0 -2%;
+
+        @include bp-normal {
+            display: block;
+        }
+    }
+
+    .scrollwheel {
+        display: none;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: $main-color;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+
+        @include bp-normal {
+            display: block;
+        }
+
+        @include bp-large {
+            bottom: 25px;
+        }
+
+        @include bp-xlarge {
+            bottom: 50px;
+        }
+
+        .inner__circle {
+            width: 85px;
+            height: 85px;
+            background: $text-color;
+            position: absolute;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            img {
+                max-width: 40px;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            p {
+                position: absolute;
+                bottom: 5px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: $main-color;
+                @include fontsize(12px);
+                font-family: $ovp-thin;
+            }
+        }
+    }
+}
+
+// ABOUT
+#about {
+    background: $main-color;
+
+    @include bp-normal {
+        z-index: initial;
+    }
+
+    .about__image {
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include bp-normal {
+            left: auto;
+            transform: none;
+        }
+
+        img {
+            max-width: 275px;
+        }
+    }
+
+    .about__text {
+        margin-bottom: 375px;
+
+        @include bp-normal {
+            float: right;
+            width: 60%;
+            margin-bottom: 0;
+        }
+
+        h3 {
+            margin-bottom: 16px;
+            color: $white;
+
+            span {
+                font-family: $ovp-thin;
+            }
+        }
+
+        p {
+            color: $white;
+            
+            &:first-of-type {
+                margin-bottom: 24px;            
+            }
+        }
+    }
+}
+
+// DIENSTEN
+#services {
+    .grid__item {
+        margin-top: 40px;
+        text-align: center;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        @include bp-medium {
+            margin-top: 0;
+            text-align: left;
+        }
+
+        img {
+            max-width: 55px;
+            height: auto;
+            margin-bottom: 24px;            
+        }
+
+        h3 {
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: $light-text-color;
+        }
+    }
+}
+
+// BREAK
+#break {
+    background: $main-color;
+    text-align: center;
+
+    h3 {
+        color: $white;
+        margin-bottom: 32px;
+    }
+
+    a {
+        font-family: $ovp-light;
+        display: inline-block;
+    }
+}
+
+// Contact
+#contact {
+    a {
+        color: $main-color;
+        text-decoration: underline;
+    }
+    
+    p {
+        margin-bottom: 32px;
+    }
+}
+
+// INFO
+#info {
+    background: $main-color;
+
+    .info__text {
+        @include bp-random {
+            float: left;
+            width: 50%;
+        }
+
+        h3 {
+            color: $white;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        p {
+            color: $white;
+            margin-bottom: 8px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            i {
+                margin-right: 8px;
+            }
+
+            a {
+                color: $white;
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    .info__services {
+        text-align: left;
+
+        @include bp-random {
+            float: left;
+            width: 50%;
+            text-align: center;
+        }
+
+        img {
+            max-width: 50px;
+        }
+
+        ul {
+            max-width: 237px;
+            margin-top: 24px;
+
+            @include bp-random {
+                margin: 0 auto;
+                margin-top: 24px;
+            }
+
+            li {
+                display: inline-block;
+                width: 50px;
+                margin-top: 16px;
+                margin-right: 8px;
+
+                &:nth-child(4) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+// footer
+footer {
+    min-height: 150px;
+    position: relative;
+    background: url('../images/bg.jpg') no-repeat top center;
+    background-attachment: fixed;
+    background-size: cover;
+
+    @include bp-normal {
+        min-height: 200px;
+    }
+
+    p {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        color: $white;
+        font-family: $ovp-thin;
+        padding: 0 25px;
+        text-align: center;
+
+        @include bp-normal {
+            top: 55%;
+        }
+
+        span {
+            font-family: $ovp-regular;
+        }
+    }
+
+    img {
+        position: absolute;
+        top: -1px;
+        width: 110%;
+        margin-left: -5%;
+        height: auto;
+        z-index: 1;
+        display: none;
+
+        @include bp-normal {
+            display: block;
+        }
+    }
+
+    .footer__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba($black, .75);
     }
 }
