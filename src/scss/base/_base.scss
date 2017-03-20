@@ -4,12 +4,10 @@
 
 html, body {
     height: 100%;
-    line-height: normal;
 }
 
 body {
-    background-color: $white;
-    overflow-x: hidden;
+    background-color: $light-grey;
     font-family: $ovp-regular;
     color: $text-color;
     @include fontsize(16px);
@@ -73,7 +71,6 @@ h4 {
 
 p {
     line-height: 24px;
-    font-family: $ovp-light;
 
     &.small {
         @include fontsize(14px);
@@ -102,9 +99,6 @@ ul {
 
 section {
     padding: 56px 0;
-    position: relative;
-    z-index: 1;
-    background: $white;
     
     @include bp-normal {
         padding: 112px 0;

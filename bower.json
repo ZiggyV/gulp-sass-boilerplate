@@ -9,7 +9,7 @@
   "homepage": "",
   "dependencies": {
     "jquery": "~2.2.4",
-    "normalize-css": "^4.1.1",
+    "normalize-css": "^5.0.0",
     "font-awesome": "fontawesome#^4.6.3"
   },
   "devDependencies": {

@@ -29,12 +29,6 @@
     }
 }
 
-@mixin bp-random {
-    @media (min-width: $bp-random) {
-        @content;
-    }
-}
-
 @mixin bp-medium {
     @media (min-width: $bp-medium) {
         @content;

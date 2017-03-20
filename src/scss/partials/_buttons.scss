@@ -4,14 +4,12 @@
     padding: 15px 20px;
     color: $white;
     text-align: center;
-    background: transparent;
-    border: 1px solid $white;
+    background: $main-color;
     border-radius: 3px;
     transition: .2s $cubic;
     
     &:hover {
-        background: $white;
-        color: $main-color;
+        background: darken($main-color, 5%);
     }
 
     &.button__small {
