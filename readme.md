@@ -40,7 +40,7 @@ OS X users can install Node with [Homebrew](http://brew.sh/ "Homebrew").
 $ brew install node
 ```
 
-* [Gulp](https://github.com/gulpjs/gulp/blob[`libSass`](https://github.com/sass/libsass "libsass")/master/docs/getting-started.md "Getting Started with Gulp")  
+* [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md "Getting Started with Gulp")  
 
 Install Gulp globally on your machine.
 
