@@ -26,7 +26,7 @@ var autoprefixer = require('autoprefixer'),
 
 //things we don't want to type every time
 var reload = browserSync.reload,
-    autoprefixList = ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'];
+    autoprefixList = ['last 2 versions', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'];
 
 //project paths
 var config = {
