@@ -4,11 +4,13 @@
     var count,
         hello,
         smiley,
+        $clicks,
         $body; //i tend to use '$' before a variable when it's a selector
     
     function handleBodyClick() {
         count+=1;
-        console.log('You clicked ' + count + ((count != 1) ? ' times':' time') + '!');
+        $clicks.addClass('is--active');
+        $clicks.html('You clicked ' + count + ((count != 1) ? ' times':' time') + '!');
     }
 
     //event bindings
@@ -22,6 +24,7 @@
         hello = 'Hi';
         smiley = ' :)';
         count = 0;
+        $clicks = $('.clicks');
         $body = $('body');
 
         //execute bindings 

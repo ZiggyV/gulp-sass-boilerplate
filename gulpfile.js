@@ -167,7 +167,8 @@ gulp.task('build', ['styles'], function() {
 //uncss will remove unused css and cssnano will minify it
 var optimizeCss = lazypipe()
     .pipe(uncss, { 
-        html: [config.html.input] //which html files uncss should check
+        html: [config.html.input], //which html files uncss should check
+        ignore: [/is--active/] //leave certain selectors untouched in our css (uncss can't check selectors that are added via JS)
     })
     .pipe(mergequeries, { 
         log: false //merge media queries - put true if you wanna see which media queries were processed
