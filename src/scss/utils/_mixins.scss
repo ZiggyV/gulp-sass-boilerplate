@@ -15,6 +15,15 @@
     background: linear-gradient(to right,  $left 0%, $right 100%); 
 }
 
+//Truncate
+//truncation of an element, specify max-width yourself
+@mixin truncate($max-width) {
+    max-width: $max-width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} 
+
 //FONTSIZE MIXIN
 //calculates rem for given px size
 @mixin fontsize($size) {
