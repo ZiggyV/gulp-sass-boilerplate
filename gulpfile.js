@@ -159,7 +159,7 @@ gulp.task('build', ['styles'], function() {
         .pipe(useref({ searchPath: ['.tmp', 'src', '.'] }))
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', optimizeCss())) //optimize css by calling a lazily-initialized pipeline 
-        .pipe(gulpif('*.html', htmlmin({ collapseWhitespace: true })))
+        .pipe(gulpif('*.html', htmlmin({ collapseWhitespace: true, removeComments: true })))
         .pipe(gulp.dest(config.global.output))
 });
 

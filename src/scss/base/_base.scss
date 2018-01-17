@@ -74,7 +74,7 @@ h4 {
 }
 
 p {
-    line-height: 24px;
+    line-height: 1.4;
 
     &.small {
         @include fontsize(14px);
@@ -101,7 +101,7 @@ ul {
     list-style-type: none;
 }
 
-section {
+section, footer {
     padding: 56px 0;
     
     @include bp-normal {
@@ -110,14 +110,18 @@ section {
 }
 
 .wrapper {
-    padding: 0 25px;
+    padding: 0 24px;
     max-width: 960px;
     margin: 0 auto;
+
+    @include bp-medium {
+        padding: 0 48px
+    }
 }
 
 .wrapper--big {
     @extend .wrapper;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 //this element is visible when visitor uses IE10 or below
@@ -129,7 +133,7 @@ section {
     text-align: center;
     z-index: 9999;
     background: $white;
-    padding: 15px;
+    padding: 16px;
 
     @include bp-medium {
         padding: 20px;
