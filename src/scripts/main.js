@@ -8,7 +8,12 @@
         $body; //i tend to use '$' before a variable when it's a selector
     
     function handleBodyClick() {
-        count+=1;
+        count+=1
+        
+        /* !IMPORTANT!
+         * gulp-purgecss will remove css for classes that are added with JS
+         * You can whitelist these classes by adding them in gulpfile.js [line 171]
+         */
         $clicks.addClass('is--active');
         $clicks.html('You clicked ' + count + ((count != 1) ? ' times':' time') + '!');
     }

@@ -269,13 +269,13 @@ A list of all the dependencies used in this project and a brief explanation for 
 * [`gulp-jshint`](https://github.com/spalger/gulp-jshint "gulp-jshint"): Gulp plugin for JSHint. Lints JavaScript errors. 
 * [`gulp-merge-media-queries`](https://github.com/roaiven/gulp-merge-media-queries "gulp-merge-media-queries"): Merges matching media queries into one definition. Very useful since I use a breakpoint mixin which outputs to multiple @media rules when compiled. Mmq will merge matching media queries into one rule.
 * [`gulp-plumber`](https://github.com/floatdrop/gulp-plumber "gulp-plumber"): Prevents pipe breaking caused by errors from gulp plugins.
-* [`gulp-postcss`]( "gulp-postcss"): Pipe CSS through several preprocessors (`autoprefixer`, `cssnano`), but only parse it once.  
+* [`gulp-postcss`]( "gulp-postcss"): Pipe CSS through several preprocessors (`autoprefixer`, `cssnano`), but only parse it once.
+* [`gulp-purgecss`](https://github.com/FullHuman/gulp-purgecss "gulp-purgecss"): Removes unused CSS. Great for cleaning up external resources (e.g. Bootstrap, Font Awesome).  
 * [`gulp-sass`](https://github.com/dlmanning/gulp-sass "gulp-sass"): Compiles Sass to CSS with [`libSass`](https://github.com/sass/libsass "libsass").
 * [`gulp-sequence`](https://github.com/teambition/gulp-sequence "gulp-sequence"): Perform `gulp` tasks in a specific sequence. Used in this project to clean our `.tmp/` and `dist/` folders before other tasks run.
 * [`gulp-size`](https://github.com/sindresorhus/gulp-size "gulp-size"): Display the size of the compiled output in your command line/terminal. 
 * [`gulp-sourcemaps`](https://github.com/floridoo/gulp-sourcemaps "gulp-sourcemaps"): Adds inline or external source maps. Useful when debugging compressed code. 
 * [`gulp-uglify`](https://github.com/terinjokes/gulp-uglify "gulp-uglify"): Minifies JavaScript. 
-* [`gulp-uncss`](https://github.com/ben-eb/gulp-uncss "gulp-uncss"): Removes unused CSS. Great for cleaning up external resources (e.g. Bootstrap, Font Awesome).
 * [`gulp-useref`](https://github.com/jonkemp/gulp-useref "gulp-useref"): Concatenates files between `build` blocks in your HTML.
 * [`jshint`](https://github.com/jshint/jshint "jshint"): Detects errors in your JavaScript code.
 * [`lazypipe`](https://github.com/OverZealous/lazypipe "lazypipe"): Allows you to create a lazily-initialized pipeline.

@@ -16,11 +16,11 @@ var autoprefixer = require('autoprefixer'),
     mergequeries = require('gulp-merge-media-queries'),
     plumber = require('gulp-plumber'),
     postcss = require('gulp-postcss'),
+    purgecss = require('gulp-purgecss'),
     sass = require('gulp-sass'),
     size = require('gulp-size'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
-    uncss = require('gulp-uncss'),
     useref = require('gulp-useref'),
     wiredep = require('wiredep').stream;
 
@@ -153,7 +153,7 @@ gulp.task('images', function() {
 //js files between 'build:js' blocks in our HTML will be concatenated and uglified
 //css files between 'build:css' in our HTML will be concatenated, minified and unused css will be removed; matching media queries will be merged
 //html files will be minified
-gulp.task('build', ['styles'], function() {
+gulp.task('build', function() {
     return gulp.src(config.html.input)
         .pipe(plumber())
         .pipe(useref({ searchPath: ['.tmp', 'src', '.'] }))
@@ -164,11 +164,11 @@ gulp.task('build', ['styles'], function() {
 });
 
 //with lazypipe we can create a chain of events in our gulpif condition
-//uncss will remove unused css and cssnano will minify it
+//purgecss will remove unused css and cssnano will minify it
 var optimizeCss = lazypipe()
-    .pipe(uncss, { 
-        html: [config.html.input], //which html files uncss should check
-        ignore: [/is--active/] //leave certain selectors untouched in our css (uncss can't check selectors that are added via JS)
+    .pipe(purgecss, {
+        content: [config.html.input], //which html files should be purged
+        whitelist: ['is--active'] //leave certain selectors untouched in our css (selectors that are added via JS)
     })
     .pipe(mergequeries, { 
         log: false //merge media queries - put true if you wanna see which media queries were processed
