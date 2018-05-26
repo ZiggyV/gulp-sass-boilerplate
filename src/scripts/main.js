@@ -8,7 +8,7 @@
         $body; //i tend to use '$' before a variable when it's a selector
     
     function handleBodyClick() {
-        count+=1
+        count+=1;
         
         /* !IMPORTANT!
          * gulp-purgecss will remove css for classes that are added with JS
