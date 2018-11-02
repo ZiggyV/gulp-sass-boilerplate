@@ -1,3 +1,11 @@
+/* _BASE.SCSS
+ * --------------------------------------------------
+ *  Base styles
+ * 
+ *  Default styles of the project, these will not
+ *  be changed or altered in most of the cases
+ * -------------------------------------------------- */
+
 html {
     box-sizing: border-box;
 }
@@ -11,8 +19,8 @@ html, body {
 }
 
 body {
-    background-color: $light-grey;
-    font-family: $ovp-regular;
+    background-color: $background-color;
+    font-family: $ovp-light;
     color: $text-color;
     @include fontsize(16px);
 
@@ -74,25 +82,30 @@ h4 {
 }
 
 p {
-    line-height: 1.4;
-
-    &.small {
-        @include fontsize(14px);
-        line-height: 21px;
-    }
-
-    &.thin {
-        font-family: $ovp-thin;
-        color: $light-text-color;
-    }
-
-    &.bold {
-        font-family: $ovp-bold;
-    }
+    line-height: 1.5;
 }
 
+.small {
+    @include fontsize(14px);
+}
+
+.thin {
+    font-family: $ovp-thin;
+    color: $paragraph-color;
+}
+
+.bold {
+    font-family: $ovp-bold;
+}
+
+// 'normalize' some other elements (personal pref)
 a {
     text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
 }
 
 ul {
@@ -124,7 +137,7 @@ section, footer {
     max-width: 1400px;
 }
 
-//this element is visible when visitor uses IE10 or below
+// this element is visible when visitor uses IE10 or below
 .browserupgrade {
     position: absolute;
     top: 0;
@@ -144,7 +157,7 @@ section, footer {
     }
 }
 
-//clearfix: add 'cf' to container of floated elements
+// clearfix: add 'cf' to container of floated elements
 .cf:before,
 .cf:after {
     content: " ";
@@ -155,7 +168,7 @@ section, footer {
     clear: both;
 }
 
-//selected text color and bg
+// selected text color and bg
 ::-moz-selection {
     color: $white;
     background: $main-color;

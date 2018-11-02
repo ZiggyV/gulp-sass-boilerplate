@@ -1,22 +1,29 @@
-//GRADIENT MIXINS
-//top to bottom
+/* _MIXINS.SCSS
+ * --------------------------------------------------
+ *  SASS mixins
+ * 
+ *  All mixins should be declared here. Included:
+ *  vertical/horizontal gradient, truncate, 
+ *  fontsize and breakpoints 
+ * -------------------------------------------------- */
+
+// top to bottom gradient
 @mixin verticalGradient($top, $bottom){
-    background: $top; //fallback for old browsers
+    background: $top; // fallback for old browsers
     background: -webkit-linear-gradient(top,  $top 0%, $bottom 100%); 
     background: -moz-linear-gradient(top,  $top 0%, $bottom 100%);    
     background: linear-gradient(to bottom,  $top 0%, $bottom 100%); 
 }
 
-//left to right
+// left to right gradient
 @mixin horizontalGradient($left, $right){
-    background: $left; //fallback for old browsers
+    background: $left; // fallback for old browsers
     background: -webkit-linear-gradient(left,  $left 0%, $right 100%); 
     background: -moz-linear-gradient(left,  $left 0%, $right 100%);    
     background: linear-gradient(to right,  $left 0%, $right 100%); 
 }
 
-//Truncate
-//truncation of an element, specify max-width yourself
+// truncate
 @mixin truncate($max-width) {
     max-width: $max-width;
     white-space: nowrap;
@@ -24,14 +31,13 @@
     text-overflow: ellipsis;
 } 
 
-//FONTSIZE MIXIN
-//calculates rem for given px size
+// fontsize (calculates rem for given px)
 @mixin fontsize($size) {
     font-size: $size;
     font-size: calculateRem($size);
 }
 
-//BREAKPOINT MIXINS
+// breakpoints
 @mixin bp-small {
     @media (min-width: $bp-small) {
         @content;

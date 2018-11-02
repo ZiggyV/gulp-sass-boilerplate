@@ -1,7 +1,12 @@
-//default cta button
+/* _BUTTONS.SCSS
+ * --------------------------------------------------
+ *  Button styles should be declared here
+ * -------------------------------------------------- */
+
+// default cta button
 .button {
     display: block;
-    padding: 15px 20px;
+    padding: 16px 20px;
     color: $white;
     text-align: center;
     background: $main-color;
@@ -12,7 +17,8 @@
         background: darken($main-color, 5%);
     }
 
-    &.button__small {
-        @include fontsize(14px);
-    }
+}
+
+.button__small {
+    @include fontsize(14px);
 }

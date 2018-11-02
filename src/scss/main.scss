@@ -1,22 +1,35 @@
-//import utils
+/* MAIN.SCSS
+ * --------------------------------------------------
+ *  Import all seperate files 
+ *  https://sass-guidelin.es/#the-7-1-pattern
+ * 
+ *  Note: To support fa-regular and fa-brand icons,
+ *  add them to the main override in bower.json
+ *  and execute 'gulp wiredep' to inject the assets
+ * -------------------------------------------------- */
+
+// import utils
 @import 'utils/variables';
 @import 'utils/functions';
 @import 'utils/mixins';
 @import 'utils/placeholders';
+@import 'utils/helpers';
 
-//import scss assets from your bower_components - this will be done automatically
+// import scss assets from bower_components - this will be done automatically
 // bower:scss
 @import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
-//import base
+// import base
 @import 'base/fonts';
 @import 'base/base';
 
-//import partials
+// import partials
 @import 'partials/buttons';
 @import 'partials/grid';
+@import 'partials/header';
+@import 'partials/footer';
 
-//import pagges
+// import pagges
 @import 'pages/index';
 @import 'pages/styleguide';

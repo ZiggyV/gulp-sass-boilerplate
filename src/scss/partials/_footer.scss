@@ -1,4 +1,8 @@
-/* _INDEX.SCSS
+/* _FOOTER.SCSS
  * --------------------------------------------------
- *  Styles for the index page
+ *  Footer styles should be declared here
  * -------------------------------------------------- */
+
+ footer {
+    @extend header;
+}
