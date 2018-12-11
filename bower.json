@@ -25,16 +25,16 @@
   },
   "overrides": {
     "font-awesome": {
-        "main": [
-          "web-fonts-with-css/scss/fontawesome.scss",
-          "web-fonts-with-css/scss/solid.scss",
-          "web-fonts-with-css/webfonts/*"
-        ]
-      },
+      "main": [
+        "web-fonts-with-css/scss/fontawesome.scss",
+        "web-fonts-with-css/scss/solid.scss",
+        "web-fonts-with-css/webfonts/*"
+      ]
+    },
     "normalize-css": {
-        "main": [
-          "normalize.css"
-        ]
+      "main": [
+        "normalize.css"
+      ]
     }
   }
 }

@@ -210,7 +210,9 @@ gulp.task('build', function() {
 var optimizeCss = lazypipe()
     .pipe(purgecss, {
         content: [config.html.input], // which html files should be purged
-        whitelist: ['is--active'] // leave certain selectors untouched in our css (selectors that are added via JS)
+        whitelist: ['is--active'], // leave certain selectors untouched in our css (selectors that are added via JS)
+        whitelistPatterns: [/pp-/], // example of whitelisting patterns of selectors ('.pp-section', etc will be left untouched) 
+        whitelistPatternsChildren: [/pp-/] // example of whitelisting children of patterns ('.pp-section li', etc will be left untouched)
     })
     .pipe(mergequeries, { 
         log: false // merge media queries - put true if you wanna see which media queries were processed
