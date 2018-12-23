@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="description" content="">
+    <meta name="description" content="A front-end boilerplate using Gulp, Sass and BrowserSync.">
 
     <!-- Facebook OG -->
-    <meta property="og:title" content="">
-    <meta property="og:site_name" content="">
-    <meta property="og:url" content="">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="">
+    <meta property="og:title" content="Gulp boilerplate">
+    <meta property="og:site_name" content="ziggyv">
+    <meta property="og:url" content="https://ziggyv.be/gulp-sass-boilerplate">
+    <meta property="og:description" content="A front-end boilerplate using Gulp, Sass and BrowserSync.">
+    <meta property="og:image" content="https://ziggyv.be/gulp-sass-boilerplate/images/seo.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1920">
     <meta property="og:image:height" content="1080">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:domain" content="">
-    <meta name="twitter:url" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="">
+    <meta name="twitter:title" content="Gulp boilerplate">
+    <meta name="twitter:domain" content="ziggyv">
+    <meta name="twitter:url" content="https://ziggyv.be/gulp-sass-boilerplate">
+    <meta name="twitter:description" content="A front-end boilerplate using Gulp, Sass and BrowserSync.">
+    <meta name="twitter:image" content="https://ziggyv.be/gulp-sass-boilerplate/images/seo.png">
     <meta name="twitter:image:width" content="1920">
     <meta name="twitter:image:height" content="1080">
 
@@ -45,14 +45,55 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a target="_blank" href="http://outdatedbrowser.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header class="vh__center">
+    <header class="header__border"></header>
+
+    <div class="container">
+        <section id="features">
+            <div class="wrapper">
+                <h1 class="mb-md">Gulp-sass-boilerplate</h1>
+                <p class="mb-md">A front-end boilerplate using <a href="https://gulpjs.com" target="_blank">Gulp</a> as build tool. Based on Yeoman's <a href="https://github.com/yeoman/generator-webapp" target="_blank">webapp generator</a>, various other blogs/tutorials and my own experience.</p>
+
+                <h4 class="mb-md">Features</h4>
+                <ul class="features__list">
+                    <li class="mb-md">
+                        <p><span class="bold">Live reloading and synchronization</span> with <a href="https://www.browsersync.io/" target="_blank">BrowserSync</a>.</p>
+                    </li>
+                    <li class="mb-md">
+                        <p><span class="bold">Lints, uglifies and minifies</span> JavaScript</p>
+                    </li>
+                    <li class="mb-md">
+                        <p><span class="bold">Compiles Sass</span> with <a href="https://github.com/sass/libsass" target="_blank">libSass</a>. Writes <span class="bold">sourcemaps</span> in development.</p>
+                    </li>
+                    <li class="mb-md">
+                        <p><span class="bold">Autoprefixes, minifies</span> and <span class="bold">removes</span> unused CSS.</p>
+                    </li>
+                    <li class="mb-md">
+                        <p><span class="bold">Media query optimization</span>: merges matching media queries into one definition.</p>
+                    </li>
+                    <li class="mb-md">
+                        <p><span class="bold">Optimizes images</span> - PNG, JPG, GIF and SVG.</p>
+                    </li>
+                    <li class="mb-md">
+                        <p>Handles <span class="bold">file concatentation</span> with <a href="https://github.com/jonkemp/gulp-useref" target="_blank">gulp-useref</a>.</p>
+                    </li>
+                    <li class="mb-md">
+                        <p><span class="bold">Automatically injects assets</span> from bower_components to HTML/SCSS files.</p>
+                    </li>
+                </ul>
+                
+                <p class="mt-md mb-md">A few basic styles and mixins are included, as well as a JavaScript file with best practices based on <a href="https://www.youtube.com/watch?v=RMiTxHba5fo" target="_blank">a podcast from DevTips</a>. These are completely optional and can be removed or altered according to your liking.</p>
+                <a href="styleguide" class="button">basic style guidelines</a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="vh__center vh__center--sm">
         <div class="wrap wrapper">
             <h1 class="big__heading mb-md">Gulp boilerplate</h1>
             <p>Front-end boilerplate for a better and faster workflow</p>
-            <a href="styleguide.html" class="stopProp cta__link">style guidelines</a>
-            <p class="clicks mt-md">0 times clicked</p>
+            <a class="cta__link" href="https://github.com/ZiggyV/gulp-sass-boilerplate" target="_blank">View on GitHub <i class="fas fa-clone fa-sm" title="Clone"></i></a>
         </div>
-    </header>
+    </footer>
 
     <!-- External javascript files (e.g. jQuery) - automatically injected -->
     <!-- build:js js/vendor.js -->

@@ -96,28 +96,26 @@ var config = {
  * 
  *  http://localhost:3000
  * -------------------------------------------------- */
-gulp.task('serve', ['styles', 'scripts', 'fonts'], function() {
+gulp.task('serve', ['styles', 'scripts', 'images', 'fonts'], function() {
     browserSync({
         server: {
             baseDir:[config.global.tmp, config.global.input], // .tmp and src as base directories
             routes: {
                 '/bower_components': 'bower_components' // serve bower_components as if it's located in 'src'
+            },
+            serveStaticOptions: {
+                extensions: ['html']
             }
         },
         notify: false,
         port: 3000 // configure port to your liking
     });
 
-    // watch html, js and images and reload browser when something changes
-    gulp.watch([ 
-        config.html.input,
-        config.scripts.input,
-        config.images.input
-    ]).on('change', reload);
-
-    // watch scss, js, fonts and bower.js and execute task accordingly
+    // watch html, scss, js, images, fonts and bower.js and execute task accordingly
+    gulp.watch(config.html.input).on('change', reload);
     gulp.watch(config.styles.all, ['styles']);
-    gulp.watch(config.scripts.input, ['scripts']); 
+    gulp.watch(config.scripts.input, ['scripts']);
+    gulp.watch(config.images.input, ['images']);
     gulp.watch(config.fonts.input, ['fonts']);
     gulp.watch(config.bower.input, ['wiredep', 'fonts']); // execute wiredep when bower.json changes; this will automatically inject assets from bower_components in our HTML or SCSS
 });

@@ -27,6 +27,10 @@
     @extend %link;
 }
 
+.main__link {
+    color: $main-color;
+}
+
 // color changer
 .section-white {
     background-color: $white;

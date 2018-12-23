@@ -5,7 +5,7 @@
 
 // default cta button
 .button {
-    display: block;
+    display: inline-block;
     padding: 16px 20px;
     color: $white;
     text-align: center;
@@ -14,7 +14,8 @@
     transition: .2s $cubic;
     
     &:hover {
-        background: darken($main-color, 5%);
+        background: lighten($main-color, 5%);
+        transform: translateY(-1px);
     }
 
 }
