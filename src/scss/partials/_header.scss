@@ -32,11 +32,19 @@ header {
 }
 
 .clicks {
-    color: $white;
     display: none;
     margin-bottom: 0;
+    @include fontsize(16px);
+    color: darken($secondary-color, 32%);
+    background-color: lighten($secondary-color, 24%); 
+    padding: 8px 12px;
+    border-radius: 16px;
 
     &.is--active {
-        display: block;
+        display: inline-block;
+    }
+
+    @include bp-medium {
+        transform: translateY(-8px);
     }
 }
