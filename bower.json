@@ -26,9 +26,11 @@
   "overrides": {
     "font-awesome": {
       "main": [
-        "web-fonts-with-css/scss/fontawesome.scss",
-        "web-fonts-with-css/scss/solid.scss",
-        "web-fonts-with-css/webfonts/*"
+        "scss/fontawesome.scss",
+        "scss/regular.scss",
+        "scss/solid.scss",
+        "scss/brands.scss",
+        "webfonts/*"
       ]
     },
     "normalize-css": {
