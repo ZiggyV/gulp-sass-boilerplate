@@ -14,7 +14,7 @@ header {
     
     p {
         color: $white;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     i {
@@ -40,11 +40,11 @@ header {
     padding: 8px 12px;
     border-radius: 16px;
 
-    &.is--active {
-        display: inline-block;
-    }
-
     @include bp-medium {
         transform: translateY(-8px);
+
+        &.is--active {
+            display: inline-block;
+        }
     }
 }
